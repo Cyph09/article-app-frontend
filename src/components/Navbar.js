@@ -17,7 +17,7 @@ class Navbar extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="btn btn-primary nav-link " to="/create">
+              <Link className="nav-link " to="/create">
                 Add Article
               </Link>
             </li>
