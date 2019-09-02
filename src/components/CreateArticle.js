@@ -20,20 +20,20 @@ class CreateArticle extends Component {
     };
   }
 
-  onChangeArticleName = (e) => {
+  onChangeArticleName(e) {
     this.setState({ name: e.target.name });
   }
-  onChangeAuthor = (e) => {
+  onChangeAuthor(e) {
     this.setState({ author: e.target.author });
   }
-  onChangeReadTime = (e) => {
+  onChangeReadTime(e) {
     this.setState({ read_time: e.target.read_time });
   }
-  onChangePublishedDate = (date) => {
+  onChangePublishedDate(date) {
     this.setState({ published: date });
   }
 
-  onSubmit = (e) => {
+  onSubmit(e) {
     e.preventDefault();
 
     const article = {
