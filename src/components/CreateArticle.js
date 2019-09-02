@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -21,13 +22,13 @@ class CreateArticle extends Component {
   }
 
   onChangeArticleName(e) {
-    this.setState({ name: e.target.name });
+    this.setState({ name: e.target.value });
   }
   onChangeAuthor(e) {
-    this.setState({ author: e.target.author });
+    this.setState({ author: e.target.value });
   }
   onChangeReadTime(e) {
-    this.setState({ read_time: e.target.read_time });
+    this.setState({ read_time: e.target.value });
   }
   onChangePublishedDate(date) {
     this.setState({ published: date });
@@ -45,6 +46,11 @@ class CreateArticle extends Component {
 
     console.log(article);
 
+    axios
+      .post("http://localhost:5000/api/articles", article)
+      .then(res => console.log(res.data))
+      .catch(error => console.log(error));
+
     window.location = "/";
   }
 
@@ -54,7 +60,7 @@ class CreateArticle extends Component {
         <h3>Add New Article</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Article Name:</label>
+            <label>Name:</label>
             <input
               type="text"
               value={this.state.name}
@@ -87,7 +93,7 @@ class CreateArticle extends Component {
             <label>Date: </label>
             <div>
               <DatePicker
-                value={this.state.published}
+                selected={this.state.published}
                 onChange={this.onChangePublishedDate}
               />
             </div>

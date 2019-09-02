@@ -15,7 +15,7 @@ function App() {
         <br />
         <Route path="/" exact component={ArticlesList} />
         <Route path="/edit/:id" component={EditArticle} />
-        <Route path="/create" component={CreateArticle} />
+        <Route path="/add" component={CreateArticle} />
       </div>
     </Router>
   );
