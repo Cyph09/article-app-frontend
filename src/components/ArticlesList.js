@@ -39,14 +39,14 @@ class ArticlesList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/articles")
+      .get(" https://rocky-bayou-13628.herokuapp.com/api/articles")
       .then(response => this.setState({ articles: response.data }))
       .catch(error => console.log(error));
   }
 
   deleteArticle(id) {
     axios
-      .delete("http://localhost:5000/api/articles/" + id)
+      .delete(" https://rocky-bayou-13628.herokuapp.com/api/articles/" + id)
       .then(response => console.log(response.data.message));
 
     this.setState({

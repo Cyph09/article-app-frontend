@@ -23,7 +23,9 @@ class EditArticle extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:5000/api/articles/${this.props.match.params.id}`)
+      .get(
+        ` https://rocky-bayou-13628.herokuapp.com/api/articles/${this.props.match.params.id}`
+      )
       .then(response => {
         this.setState({
           name: response.data.name,
@@ -61,8 +63,9 @@ class EditArticle extends Component {
 
     axios
       .post(
-        "http://localhost:5000/api/articles/" + this.props.match.params.id,
-        article
+        " https://rocky-bayou-13628.herokuapp.com/api/articles/" +
+          this.props.match.params.id,
+        { article }
       )
       .then(res => console.log(res.data))
       .catch(error => console.log(error));

@@ -47,7 +47,9 @@ class CreateArticle extends Component {
     console.log(article);
 
     axios
-      .post("http://localhost:5000/api/articles", article)
+      .post(" https://rocky-bayou-13628.herokuapp.com/api/articles", {
+        article
+      })
       .then(res => console.log(res.data))
       .catch(error => console.log(error));
 
